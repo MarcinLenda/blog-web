@@ -1,0 +1,19 @@
+<h2>New posts list</h2>
+
+<mat-list>
+  <mat-list-item *ngFor="let p of postsList">
+    <img mat-list-avatar src="{{p.giphyUrl}}" alt="{{p.name}}">
+    <h2 mat-line>Id:</h2>
+    <h3 mat-line>
+      {{p.id}}
+    </h3>
+    <h2 mat-line>Title:</h2>
+    <h3 mat-line>
+     {{p.title}}
+    </h3>
+    <h2 mat-line>Content:</h2>
+    <h3 mat-line>
+      {{p.content}}
+    </h3>
+  </mat-list-item>
+</mat-list>

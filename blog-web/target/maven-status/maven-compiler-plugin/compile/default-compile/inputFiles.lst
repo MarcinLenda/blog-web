@@ -1,0 +1,13 @@
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/repository/PostRepository.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/helper/BaseConverter.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/exception/ErrorDetails.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/dto/PostDto.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/controller/CustomizedExceptionHandler.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/service/PostService.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/model/Post.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/controller/PostController.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/service/PostServiceImpl.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/exception/PostException.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/config/ConfigureContentNegotiation.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/Main.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/helper/PostBaseConverter.java

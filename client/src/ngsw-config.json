@@ -42,17 +42,6 @@
         "maxAge": "1d",
         "strategy": "freshness"
       }
-    },
-    {
-      "name": "giphy-api",
-      "urls": [
-        "http://api.giphy.com/**"
-      ],
-      "cacheConfig": {
-        "maxSize": 100,
-        "maxAge": "1d",
-        "strategy": "performance"
-      }
     }
   ]
 }

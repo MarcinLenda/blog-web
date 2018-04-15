@@ -1,2 +1,1 @@
-export * from './beer/blog-web.service';
-export * from './giphy/giphy.service';
+export * from './posts/blog-web.service';

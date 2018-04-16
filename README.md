@@ -29,7 +29,7 @@ How to run
 
 BACK-END
 
-To run the client, cd into the `blog-web` folder and run `Application.class`. Open <http://localhost:8081>
+To run the blog-web server, cd into the `blog-web` folder and run `Application.class`. Open <http://localhost:8081>
 
 Tests: `blog-web/test/java`
 

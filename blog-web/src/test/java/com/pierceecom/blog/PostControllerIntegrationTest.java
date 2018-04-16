@@ -1,13 +1,12 @@
 package com.pierceecom.blog;
 
-import javax.sql.DataSource;
+import java.util.Arrays;
 import javax.transaction.Transactional;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -30,8 +29,6 @@ public class PostControllerIntegrationTest {
     @LocalServerPort
     private int port;
     private TestRestTemplate restTemplate;
-    @Autowired
-    private DataSource dataSource;
 
     @Before
     public void setup() throws PostException {
@@ -43,7 +40,7 @@ public class PostControllerIntegrationTest {
     public void get_post_should_be_return_200_test() throws Exception {
         //given
         final Long entityId = 1L;
-        final PostDto exceptedDto = PostDto.builder().id(1L).title("start-data").content("Facebook").build();
+        final PostDto exceptedDto = PostDto.builder().id(1L).title("Facebook").content("example data").build();
 
         //when
         final ResponseEntity<PostDto> postsDto = restTemplate.getForEntity(getUrl() + entityId, PostDto.class);
@@ -70,7 +67,7 @@ public class PostControllerIntegrationTest {
     @Test
     public void get_post_should_be_return_404() throws Exception {
         //given
-        final Long entityId = 6L;
+        final Long entityId = 100L;
 
         //when
         final ResponseEntity<PostDto> postsDto = restTemplate.getForEntity(getUrl() + entityId, PostDto.class);
@@ -80,7 +77,7 @@ public class PostControllerIntegrationTest {
     }
 
     @Test
-    public void post_post_should_be_return_201_test() {
+    public void save_post_should_be_return_201_test() {
         //given
         final PostDto postDto = PostDto.builder().title("Facebook").content("test-data").build();
 
@@ -103,8 +100,20 @@ public class PostControllerIntegrationTest {
         assertThat(postsList.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 
+    @Test
+    public void delete_post_should_be_return_201_test() {
+        //given
+        final Long id = 1L;
+        //when
+        restTemplate.delete(getUrl() + id);
+        final ResponseEntity<PostDto[]> postsList = restTemplate.getForEntity(getUrl(), PostDto[].class);
+
+        //then
+        assertThat(Arrays.stream(postsList.getBody()).anyMatch(p -> p.getId().equals(id))).isFalse();
+    }
+
     public String getUrl() {
-        return "http://localhost:" + port + "/posts/";
+        return "http://localhost:" + port + "/post/";
     }
 }
 

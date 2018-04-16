@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.pierceecom.blog.PostsServiceIntegrationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.759 sec - in com.pierceecom.blog.PostsServiceIntegrationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.782 sec - in com.pierceecom.blog.PostsServiceIntegrationTests

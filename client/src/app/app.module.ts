@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
-import {PostsListComponent} from './post-list/post-list.component';
+import {PostListComponent} from './post-list/post-list.component';
 import {MatButtonModule, MatListModule, MatToolbarModule} from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
@@ -13,24 +13,22 @@ import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {PostsAddComponent} from "./post-add/post-add.component";
+import {PostAddComponent} from "./post-add/post-add.component";
 import {FormsModule} from '@angular/forms';
-import {PostsUpdateComponent} from "./post-update/post-update.component";
-
+import {PostUpdateComponent} from "./post-update/post-update.component";
 
 const appRoutes: Routes = [
-  {path: 'all', component: PostsListComponent},
-  {path: 'add', component: PostsAddComponent},
-  {path: 'update', component: PostsUpdateComponent},
-
+  {path: 'all', component: PostListComponent},
+  {path: 'add', component: PostAddComponent},
+  {path: 'update', component: PostUpdateComponent},
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsListComponent,
-    PostsAddComponent,
-    PostsUpdateComponent
+    PostListComponent,
+    PostAddComponent,
+    PostUpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,2 +1,6 @@
-com/pierceecom/blog/PostControllerIntegrationTest.class
 com/pierceecom/blog/PostsServiceIntegrationTests.class
+com/pierceecom/blog/PostServiceTest$2.class
+com/pierceecom/blog/PostBaseConverterTest.class
+com/pierceecom/blog/PostServiceTest$1.class
+com/pierceecom/blog/PostControllerIntegrationTest.class
+com/pierceecom/blog/PostServiceTest.class

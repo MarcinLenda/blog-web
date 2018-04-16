@@ -24,7 +24,7 @@ import com.pierceecom.blog.exception.PostException;
 import com.pierceecom.blog.service.PostService;
 
 @RestController
-@RequestMapping(value = "/posts", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/post", produces = MediaType.APPLICATION_JSON_VALUE)
 public class PostController {
 
     private final PostService postService;
@@ -52,7 +52,7 @@ public class PostController {
     public ResponseEntity<Long> save(@RequestBody final PostDto postDto) throws PostException {
         final Long entityId = postService.save(postDto);
         final URI uri = ServletUriComponentsBuilder //
-                .fromCurrentRequest().path("/posts") //
+                .fromCurrentRequest().path("/post") //
                 .buildAndExpand(entityId) //
                 .toUri();
 
@@ -63,8 +63,12 @@ public class PostController {
     @PutMapping
     public ResponseEntity<Long> update(@RequestBody final PostDto postDto) throws PostException {
         final Long entityId = postService.update(postDto);
+        final URI uri = ServletUriComponentsBuilder //
+                .fromCurrentRequest().path("/post") //
+                .buildAndExpand(entityId) //
+                .toUri();
 
-        return ResponseEntity.ok(entityId);
+        return ResponseEntity.created(uri).build();
     }
 
     @CrossOrigin("http://localhost:4200")
@@ -72,6 +76,6 @@ public class PostController {
     public ResponseEntity<Void> delete(@PathVariable final Long id) throws PostException {
         postService.delete(id);
 
-        return ResponseEntity.ok().build();
+        return ResponseEntity.noContent().build();
     }
 }

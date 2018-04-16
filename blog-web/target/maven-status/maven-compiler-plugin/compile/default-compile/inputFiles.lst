@@ -1,4 +1,5 @@
 /Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/repository/PostRepository.java
+/Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/validator/PostValidator.java
 /Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/helper/BaseConverter.java
 /Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/exception/ErrorDetails.java
 /Users/mld/Downloads/codetest-master/blog-web/src/main/java/com/pierceecom/blog/dto/PostDto.java

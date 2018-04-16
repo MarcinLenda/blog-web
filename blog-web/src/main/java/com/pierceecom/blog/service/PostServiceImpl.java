@@ -13,13 +13,15 @@ import com.pierceecom.blog.exception.PostException;
 import com.pierceecom.blog.helper.BaseConverter;
 import com.pierceecom.blog.model.Post;
 import com.pierceecom.blog.repository.PostRepository;
+import com.pierceecom.blog.validator.PostValidator;
 
 import static java.util.Objects.isNull;
 
 @Service
 public class PostServiceImpl implements PostService {
 
-    private final PostRepository postRepository;
+    //modifier is public for tests
+    public PostRepository postRepository;
     private final BaseConverter<Post, PostDto> postsBaseConverter;
 
     @Autowired
@@ -30,10 +32,11 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Long save(final PostDto postDto) throws PostException {
-        final Post post = Post.builder().title(postDto.getTitle()).content(postDto.getContent()).build();
-        if (isNull(post)) {
+        if (isNull(postDto)) {
             throw PostException.create("Post to save is null", HttpStatus.INTERNAL_SERVER_ERROR);
         }
+        final Post post = Post.builder().title(postDto.getTitle()).content(postDto.getContent()).build();
+
         final Post saveEntity = postRepository.save(post);
 
         return Optional.ofNullable(saveEntity).map(Post::getId).orElseThrow(
@@ -47,15 +50,19 @@ public class PostServiceImpl implements PostService {
         postsDto.map(p -> {
             postRepository.delete(Post.builder().id(p.getId()).title(p.getTitle()).content(p.getContent()).build());
             return true;
-        }).orElseThrow(() -> PostException.create("Delete posts about id: " + id + " failed.", HttpStatus.INTERNAL_SERVER_ERROR));
+        }).orElseThrow(() -> PostException.create("Delete post about id: " + id + " failed.", HttpStatus.INTERNAL_SERVER_ERROR));
     }
 
     @Override
     public Long update(final PostDto postDto) throws PostException {
-        final Post post = Post.builder().id(postDto.getId()).title(postDto.getTitle()).content(postDto.getContent()).build();
-        if (isNull(post)) {
+        if (isNull(postDto)) {
             throw PostException.create("Post to update is null", HttpStatus.INTERNAL_SERVER_ERROR);
         }
+        final Post post = Post.builder().id(postDto.getId()).title(postDto.getTitle()).content(postDto.getContent()).build();
+        final Post searchPost = postRepository.findOne(post.getId());
+
+        PostValidator.validateUpdate(searchPost);
+
         final Post saveEntity = postRepository.save(post);
 
         return Optional.ofNullable(saveEntity).map(Post::getId).orElseThrow(

@@ -8,7 +8,7 @@ import {MatTableDataSource} from '@angular/material';
   styleUrls: ['./post-list.component.css'],
   providers: [BlogWebService]
 })
-export class PostsListComponent implements OnInit {
+export class PostListComponent implements OnInit {
   postsList: Array<any>;
   displayedColumns = ['id', 'title', 'content', 'delete'];
 

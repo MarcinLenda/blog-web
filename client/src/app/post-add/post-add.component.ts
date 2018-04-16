@@ -1,17 +1,16 @@
 import {Component} from '@angular/core';
 import {BlogWebService} from '../shared';
-import {MatSnackBar} from "@angular/material";
 
 @Component({
   selector: 'app-blog-web-list',
   templateUrl: 'post-add.component.html',
   styleUrls: ['post-add.component.css'],
-  providers: [BlogWebService,MatSnackBar]
+  providers: [BlogWebService]
 })
 
-export class PostsAddComponent {
+export class PostAddComponent {
 
-  constructor(private blogWebService: BlogWebService, public snackBar: MatSnackBar) { }
+  constructor(private blogWebService: BlogWebService) { }
 
   addPosts(title: string, content: string) {
     const posts: Posts = {
@@ -20,9 +19,6 @@ export class PostsAddComponent {
       content: content
     };
     this.blogWebService.post(posts).subscribe(data => {
-      this.snackBar.open("asdasd", "asdasd", {
-        duration: 2000,
-      });
     });
   }
 }

@@ -1,1 +1,1 @@
-export * from './posts/blog-web.service';
+export * from './post/blog-web.service';

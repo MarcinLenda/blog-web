@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.pierceecom.blog.PostControllerIntegrationTest" time="0.588" tests="5" errors="0" skipped="0" failures="0">
+<testsuite name="com.pierceecom.blog.PostControllerIntegrationTest" time="0.815" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib"/>
     <property name="java.vm.version" value="25.121-b13"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/mld/Downloads/codetest-master"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/mld/Downloads/codetest-master/blog-web"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/mld/Downloads/codetest-master"/>
+    <property name="user.dir" value="/Users/mld/Downloads/codetest-master/blog-web"/>
     <property name="java.runtime.version" value="1.8.0_121-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/endorsed"/>
@@ -61,9 +61,10 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="update_post_should_be_return_200_test" classname="com.pierceecom.blog.PostControllerIntegrationTest" time="0.465"/>
-  <testcase name="get_post_should_be_return_200_test" classname="com.pierceecom.blog.PostControllerIntegrationTest" time="0.022"/>
-  <testcase name="get_post_should_be_return_404" classname="com.pierceecom.blog.PostControllerIntegrationTest" time="0.035"/>
-  <testcase name="get_all_post_should_be_return_200_and_list_postsDto_test" classname="com.pierceecom.blog.PostControllerIntegrationTest" time="0.04"/>
-  <testcase name="post_post_should_be_return_201_test" classname="com.pierceecom.blog.PostControllerIntegrationTest" time="0.026"/>
+  <testcase name="update_post_should_be_return_200_test" classname="com.pierceecom.blog.PostControllerIntegrationTest" time="0.45"/>
+  <testcase name="get_post_should_be_return_200_test" classname="com.pierceecom.blog.PostControllerIntegrationTest" time="0.024"/>
+  <testcase name="save_post_should_be_return_201_test" classname="com.pierceecom.blog.PostControllerIntegrationTest" time="0.026"/>
+  <testcase name="get_post_should_be_return_404" classname="com.pierceecom.blog.PostControllerIntegrationTest" time="0.243"/>
+  <testcase name="get_all_post_should_be_return_200_and_list_postsDto_test" classname="com.pierceecom.blog.PostControllerIntegrationTest" time="0.035"/>
+  <testcase name="delete_post_should_be_return_201_test" classname="com.pierceecom.blog.PostControllerIntegrationTest" time="0.037"/>
 </testsuite>

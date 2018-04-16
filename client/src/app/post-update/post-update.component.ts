@@ -9,7 +9,7 @@ import {Posts} from "../post-add/post-add.component";
   providers: [BlogWebService]
 })
 
-export class PostsUpdateComponent {
+export class PostUpdateComponent {
 
   private id: number;
   private title: string;

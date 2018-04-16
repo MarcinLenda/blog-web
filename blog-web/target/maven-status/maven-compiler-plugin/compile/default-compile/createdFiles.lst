@@ -10,6 +10,7 @@ com/pierceecom/blog/helper/PostBaseConverter.class
 com/pierceecom/blog/helper/BaseConverter.class
 com/pierceecom/blog/dto/PostDto.class
 com/pierceecom/blog/service/PostServiceImpl.class
+com/pierceecom/blog/validator/PostValidator.class
 com/pierceecom/blog/controller/CustomizedExceptionHandler.class
 com/pierceecom/blog/model/Post$PostBuilder.class
 com/pierceecom/blog/exception/ErrorDetails.class

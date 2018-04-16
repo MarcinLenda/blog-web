@@ -21,7 +21,7 @@ import com.pierceecom.blog.service.PostService;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Main.class)
+@SpringBootTest(classes = Application.class)
 @Transactional
 public class PostsServiceIntegrationTests {
 
